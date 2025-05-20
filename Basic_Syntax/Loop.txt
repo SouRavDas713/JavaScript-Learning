@@ -1,10 +1,10 @@
-// Type - 1
+// Type - 01
 
 for (let i = 0; i < 5; i++) {
   console.log(`For Loop Count: ${i}`);
 }
 
-// Type - 2
+// Type - 02
 
 const person = {
   name: 'Sourav',
@@ -16,7 +16,7 @@ for (let key in person) {
   console.log(`${key}: ${person[key]}`);
 }
 
-// Type - 3
+// Type - 03
 
 const skills = ['HTML', 'CSS', 'JS'];
 
@@ -24,7 +24,7 @@ for (let skill of skills) {
   console.log(`Skill: ${skill}`);
 }
 
-// Type - 4
+// Type - 04
 
 let count = 0;
 
