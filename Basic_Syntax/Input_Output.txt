@@ -1,0 +1,38 @@
+
+//Where To Insert ? 
+
+<!--     
+<script src="myScript.js"></script>
+Just Like This Or in HTML File 
+<script>
+    code 
+<script> 
+-->
+
+//Example 01 
+
+const name  = "Sourav" ; 
+const job = "Programmer" ; 
+const birth = 2002 ; 
+const currentYear = 2025 ; 
+const status = "Hi ! I am " + name + " , I am a " + job + " \n I am " + (currentYear - birth) + " years old" ;
+console.log(status) ;
+console.dir(status) ;   // Advance Output ... See more details
+
+OR
+
+const status = `Hi ! I am ${name} , I am a ${job} \n I am ${currentYear - birth} years old` ;
+
+INPUT : [Prompt Can Only Return String ]
+
+let age  = Number(prompt("Enre An Age : )) ; 
+
+
+// Concept : == vs ===
+
+== → compares values only, does type coercion
+=== → compares values and types, no coercion
+EXAMPLE - 1 ; 
+5 == "5"     // true  (value matches after coercion)
+5 === "5"    // false (number ≠ string)
+== Check After Type Conversion || === Without Type Conversition

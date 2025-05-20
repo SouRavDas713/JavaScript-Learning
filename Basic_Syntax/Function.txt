@@ -1,0 +1,36 @@
+// TYPE - 01
+
+function fruitMachine(orange , apple)
+{
+    const juice = `The Juice is made of ${orange} oranges and ${apple} apples` ;
+    return juice ; 
+} 
+console.log(fruitMachine(6 , 10)) ; 
+
+// TYPE - 02
+
+Function as Expression 
+
+const fruitMachine = function(orange , apple) 
+{
+    const juice = `The Juice is made of ${orange} oranges and ${apple} apples` ;
+    return juice ; 
+}
+console.log(fruitMachine(6 , 10)) ;
+
+// TYPE - 03
+
+Arrow Function
+
+ const ageCal = birthYear => 2023 - birthYear ;
+ console.log(ageCal(2000)) ; 
+ 
+ EXAMPLE - 02
+ 
+ const retireCal = (birthYear , firstName) => {
+     const age = 2025 - birthYear ; 
+     const retirement = 65 - age ; 
+     // return {retirement , firstName} ; 
+     return `${firstName} retires in ${retirement} years` ;
+ }
+ console.log(retireCal(2010 , 'sd'))  ; 

@@ -1,0 +1,75 @@
+// Var = Functional Scope , Can Be Redeclear , Can be Updated
+
+// EXAMPLE - 01
+
+// var nameUser = "Sourav" ; 
+//   console.log(nameUser) ;   -> Output = Sourav
+//   if(true)
+//      {
+//         var nameUser = "Sourav Das" ; 
+//         console.log(nameUser) ; -> Output = Sourav Das   
+//       } 
+//   console.log(nameUser) ; -> Output = Sourav Das 
+//   nameUser = "Sourav C Das" ; 
+//   console.log(nameUser) ;  -> Output = Sourav C Das
+//   var nameUser = "Sourav Chandra Das" ; 
+//   console.log(nameUser) ;  -> Output = Sourav Chandra Das
+  
+//  EXAMPLE - 02
+ 
+//  if(true)
+//         {
+//           var nameUser = "Sourav Das" ; 
+//          console.log(nameUser) ; //-> Output = Sourav Das   
+//        } 
+//           console.log(nameUser) ; -> Output Error
+
+// EXAMPLE - 03
+
+//   var nameUser = "Sourav Das" ; 
+//   if(true)        
+//     {
+//             console.log(nameUser) ; //-> Output = Sourav Das   
+//        } 
+//  Desition => Child Can Access Parents Property But Not Vice-Versa ; 
+
+
+
+//  //=========================//=====================//=============================//==============
+
+// let = Block Scope , Can Be Updated But Not Redeclear in Same Scope [ Just Like C++ ] 
+
+// EXAMPLE - 01
+
+// let userName  = "Sourav" ; 
+// console.log(userName) ;    -> Output = Sourav
+// if(true)
+// {
+//     let userName = "Sourav Das" ; 
+//     console.log(userName) ; -> Output = Sourav Das 
+// }
+// console.log(userName) ; -> output = Sourav 
+// userName = "Sourav C Das" ; 
+// console.log(userName) ; -> output = Sourav C Das
+// let userName = "Sourav Chandra Das" ; 
+// console.log(userName) ; -> Syntax Error 
+
+
+// //=========================//=====================//=============================//==============
+
+// Const = Block Scope , No Reasign And No Redefine in Same Scope
+
+// EXAMPLE - 01
+
+// const nameUser = "sourav" ; 
+// console.log(nameUser) ;  -> output = Sourav 
+// if(true)
+// {
+//       const nameUser = "sourav" ; 
+//       console.log(nameUser) ;   -> output = Sourav 
+//       nameUser = "Sourav Das" ;
+//       console.log(nameUser) ;    -> output = Error
+//       const nameUser = "Sourav C Das" ; 
+//       console.log(nameUser) ;   -> output = Error
+// }
+// console.log(nameUser) ; -> output = Sourav 
