@@ -1,0 +1,47 @@
+
+        // Javascript Work With Sequence 
+
+        console.log('hello 1') ; 
+        console.log('hello 2') ; 
+        console.log('hello 3')  ; 
+
+        // Lets See A Problem 
+
+        function display(sum)
+        {
+            console.log(sum) ; 
+        }
+        function calculation(n1 , n2)
+        {
+            display(n1+n2) ; 
+        }
+        calculation(5 , 6) ; 
+
+        // What the Problem Here ? 
+        I cannot control the Printing Task
+        It Always Print  
+
+        // Callback is a function passed as an argument to another function
+        
+        function display(sum)
+        {
+            console.log(sum) ; 
+        }
+        function calculation(n1 , n2 , callback)
+        {
+            callback(n1+n2) ; 
+        }
+        calculation(5 , 6 , display) ; 
+        
+        //So now We control if we passed display then display or not 
+
+        //Another way to write 
+
+        function calculation(n1 , n2 , callback)
+        {
+            callback(n1+n2) ; 
+        }
+        calculation(5 , 6 , function (sum)
+        {
+            console.log(sum) ; 
+        }) ; 

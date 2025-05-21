@@ -1,0 +1,65 @@
+
+        // Enroll -> Progress -> Certificate 
+
+        const paymentSuccess = true ;
+        const marks = 80 ; 
+        
+        function enroll(callback)
+       {
+            console.log('Course Enrollment is in progress... ') ; 
+                setTimeout(function()
+            {
+                if(paymentSuccess)
+            {
+                callback() ; 
+            }
+            else 
+            {
+                console.log("Payment Failed ") ; 
+            }
+        } , 2000) ; 
+       } 
+
+       function call() 
+       { 
+        console.log("hello ") ;
+       }  
+
+       function progress(callback)
+       {
+        console.log('Course on Progress ... ') ; 
+        setTimeout(function()
+        {
+            if(marks>=80)
+        {
+            callback() ; 
+        }
+        else 
+        {
+            console.log("Not Enough Marks ") ; 
+        }
+        } , 3000) ; 
+       }
+
+       function getCertificate()
+       {
+        console.log('Preparing You Certificate ...') ;
+        
+        setTimeout(function(){
+            console.log('Congratulation') ; 
+        } , 1000) ; 
+       }
+
+        enroll(function()
+        {
+            progress(getCertificate) ; 
+        }) ;  
+        call() ; 
+        
+        Deep Think ! Function into Fuction and Again Function ..with parameter 
+
+        // Here Enroll have 2 sec timeout ...so its wait ... there is no other task ..if so then it will go to it ...but here no task , so he wait then callback work ...now it go to progress and wait 5 sec and then certificate 
+        // I add a call function to so you that in the waiting time js go to other work 
+
+
+  
