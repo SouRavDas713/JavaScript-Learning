@@ -1,0 +1,54 @@
+
+      //  Array Is A Collection Of Item 
+
+        let student =["sd" , "hd" , "pd"] ; 
+        console.log(student) ; 
+        let marks =[12 , 23 , 34] ; 
+        console.log(marks) ; 
+      let info = ["sd" , 23 , "ctg" ] ; 
+        console.log(info) ; 
+         console.log(student.length) ; 
+
+    // Looping Over Array : [For Loop ]
+
+    for(let i = 0 ; i<info.length ; i++)
+    {
+        console.log(info[i]) ; 
+    }
+
+     // [ For of ]
+
+        for(let i of info)
+        {
+          //console.log(i) ; 
+          console.log(i.toUpperCase()) ; // If all element string 
+        }
+
+
+
+        ======================//=============
+
+        // Array Methods : 
+
+        01. Push() -> Add to End 
+
+        02. Pop() -> Delete From End 
+
+        03. toString() -> Convert to string
+
+        04. Concat() -> Join Two or More Array    => let x = array1.Concat(array2 , array3) ; 
+
+        05. unshift() -> Insert to start
+
+        06. shift() -> Delete From Start
+
+        07. Slice() -> Return a piece of Array =>  slice(startindex , endindex)  ; 
+
+        08. Splice() -> Change array in some inverval [ add , remove , replace ]
+        => splice(startinx , delindx , newelement) ; 
+        usecase : splice(2,0,101) => insert 101 after 2nd index 
+        usecase : splice(2,3) => delete 3 element after 2nd index
+        usecase : splice(4) => 0 to 3 index delete and return array without them . But originial array delete 4 to rest element ...  
+
+        Continue...
+
