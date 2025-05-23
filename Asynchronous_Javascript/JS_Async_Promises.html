@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //In The previous Example It is not Good Practice if we write Callback Hell
+        // function(
+        //     function(
+        //         function(
+        //             function(callback)
+        //         )
+        //     )
+        // )
+        //So CallBack Is good If 2/3 Task 
+
+
+        //=======================//==============Promise=======================//================================
+        //First Understand A Callback 
+        // const status = false ; 
+        // console.log('Task 1') ; 
+
+        // setTimeout(function(){
+        //     if(status)
+        //     {
+        //         console.log('Task 2') ; 
+        //     }
+        //     else
+        //     {
+        //         console.log('Failed') ; 
+        //     }
+        // }, 5000) ; 
+
+        // console.log('Task 3') ; 
+
+        //Output => 1 , 3 , 2 ; 
+
+        //Now Implement With Promises //=====================//====================//==================
+
+        // const status = false ; 
+        // console.log('Task 1') ; 
+        // //promise define
+        // const promise = new Promise(function(resolve , reject)
+        // {
+        //     setTimeout(function(){
+        //     if(status)
+        //     {
+        //         resolve('Task 3') ;  
+        //     }
+        //     else
+        //     {
+        //         reject('Failed ') ; 
+        //     }
+        // }, 2000) ;
+        // }) ; 
+        // //promise call
+        // promise
+        // .then(function(value)
+        // {
+        //     console.log(value) ; 
+        // }) 
+        // .catch(function(err)
+        // {
+        //     console.log(err) ; 
+        // }) 
+
+        // console.log('Task 3') ; 
+
+
+        //=======================//=====================//================
+        // Now Revise Previous Callback Example : 
+        // const paymentSuccess = true ;
+        // const marks = 80 ; 
+        
+    //     function enroll(callback)
+    //    {
+    //         console.log('Course Enrollment is in progress... ') ; 
+    //             setTimeout(function()
+    //         {
+    //             if(paymentSuccess)
+    //         {
+    //             callback() ; 
+    //         }
+    //         else 
+    //         {
+    //             console.log("Payment Failed ") ; 
+    //         }
+    //     } , 2000) ; 
+    //    }   
+
+    //    function progress(callback)
+    //    {
+    //     console.log('Course on Progress ... ') ; 
+    //     setTimeout(function()
+    //     {
+    //         if(marks>=80)
+    //     {
+    //         callback() ; 
+    //     }
+    //     else 
+    //     {
+    //         console.log("Not Enough Marks ") ; 
+    //     }
+    //     } , 3000) ; 
+    //    }
+
+    //    function getCertificate()
+    //    {
+    //     console.log('Preparing You Certificate ...') ;
+        
+    //     setTimeout(function(){
+    //         console.log('Congratulation') ; 
+    //     } , 1000) ; 
+    //    }
+
+    //     enroll(function()
+    //     {
+    //         progress(getCertificate) ; 
+    //     }) ;
+
+
+    // Now Convert it To Promise 
+        const paymentSuccess = true ;
+        const marks = 90 ; 
+     function enroll()
+       {
+            console.log('Course Enrollment is in progress... ') ; 
+
+            const promise = new Promise(function(resolve , reject)
+            {
+                setTimeout(function()
+                {
+                    if(paymentSuccess)
+                {
+                    resolve() ; 
+                }
+                else 
+                {
+                    reject("Payment Failed ") ; 
+                }
+            } , 2000) ;
+            }) ; 
+            return promise ;      
+       }   
+
+       function progress()
+       {
+        console.log('Course on Progress ... ') ; 
+        const promise = new Promise(function(resolve , reject){
+            setTimeout(function()
+            {
+                if(marks>=80)
+            {
+                resolve() ; 
+            }
+            else 
+            {
+                reject("Not Enough Marks ") ; 
+            }
+            } , 2000) ; 
+            }); 
+            return promise ; 
+        }
+
+       function getCertificate()
+       {
+            console.log('Preparing You Certificate ...') ;
+            const promise = new Promise(function(resolve){
+            setTimeout(function(){
+                resolve('Congratulation') ; 
+            } , 1000) ; 
+         }) ; 
+         return promise ; 
+       }
+
+        enroll()
+        .then(progress)
+        .then(getCertificate)
+        .then(function(value){
+            console.log(value); 
+           })
+        .catch(function(err){
+            console.log(err) ; 
+           })
+
+
+    </script>
+</body>
+</html>
