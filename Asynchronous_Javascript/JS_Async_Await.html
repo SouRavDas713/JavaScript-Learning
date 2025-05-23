@@ -1,0 +1,70 @@
+
+        //Async function by default return promise 
+
+        const paymentSuccess = true ;
+        const marks = 50 ; 
+     function enroll()
+       {
+            console.log('Course Enrollment is in progress... ') ; 
+
+            const promise = new Promise(function(resolve , reject)
+            {
+                setTimeout(function()
+                {
+                    if(paymentSuccess)
+                {
+                    resolve() ; 
+                }
+                else 
+                {
+                    reject("Payment Failed ") ; 
+                }
+            } , 2000) ;
+            }) ; 
+            return promise ;      
+       }   
+
+       function progress()
+       {
+        console.log('Course on Progress ... ') ; 
+        const promise = new Promise(function(resolve , reject){
+            setTimeout(function()
+            {
+                if(marks>=80)
+            {
+                resolve() ; 
+            }
+            else 
+            {
+                reject("Not Enough Marks ") ; 
+            }
+            } , 2000) ; 
+            }); 
+            return promise ; 
+        }
+
+       function getCertificate()
+       {
+            console.log('Preparing You Certificate ...') ;
+            const promise = new Promise(function(resolve){
+            setTimeout(function(){
+                resolve('Congratulation') ; 
+            } , 1000) ; 
+         }) ; 
+         return promise ; 
+       }
+
+       async function course()
+       {
+        try { 
+                await enroll() ; 
+                await progress() ; 
+                const messege = await getCertificate() ; 
+                console.log(messege) ; 
+           }
+           catch(err)
+           {
+            console.log(err) ; 
+           }
+       }
+       course() ; 
