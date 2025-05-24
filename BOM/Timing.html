@@ -1,0 +1,40 @@
+
+     <div id="timeoutDiv"></div>
+     <div id="intervalDiv"></div>
+
+  <button onclick="startTimeout()">Start Timeout</button>
+  <button onclick="stopTimeout()">Stop Timeout</button>
+  <button onclick="startInterval()">Start Interval</button>
+  <button onclick="stopInterval()">Stop Interval</button>
+
+    let timeoutId;
+    let intervalId;
+
+    function startTimeout() {
+      timeoutId = setTimeout(() => {
+        document.getElementById('timeoutDiv').innerText = "Hello from Timeout!";
+      }, 3000); // 3 seconds delay
+    }
+
+    function stopTimeout() {
+      clearTimeout(timeoutId);
+      document.getElementById('timeoutDiv').innerText = "Timeout Stopped.";
+    }
+
+    function startInterval() {
+      intervalId = setInterval(() => {
+        const div = document.getElementById('intervalDiv');
+        const p = document.createElement('p');
+        p.innerText = "Hello from Interval!";
+        div.appendChild(p);
+      }, 2000); // every 2 seconds
+    }
+
+    function stopInterval() {
+      clearInterval(intervalId);
+      const div = document.getElementById('intervalDiv');
+      const p = document.createElement('p');
+      p.innerText = "Interval Stopped.";
+      div.appendChild(p);
+    }
+  
