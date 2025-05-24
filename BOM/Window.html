@@ -1,0 +1,24 @@
+
+ 
+    <!-- The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. -->
+<!-- All global JavaScript objects, functions, and variables automatically become members of the window object. -->
+
+    <div id="id1"></div>
+    <div id="id2"></div>
+    <button onclick="OpenWindow()">Open Window</button>
+    <button onclick="CloseWindow()">Close Window</button>
+    <script>
+        let mywindow ; 
+        const width = document.getElementById("id1") ; 
+        const heigth = document.getElementById("id2") ;
+        
+        width.innerHTML = "window inner Width is " + window.innerWidth ; 
+        heigth.innerHTML = "window inner Height is " + window.innerHeight; 
+
+        function OpenWindow(){
+            mywindow = window.open("https://codeforces.com/profile/Moon713Stone") ; 
+        }
+        function CloseWindow()
+        {
+            mywindow.close() ;    // Close The Opened Window 
+        }
